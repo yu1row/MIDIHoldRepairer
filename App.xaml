@@ -1,0 +1,11 @@
+﻿<Application x:Class="MIDIHoldRepairer.App"
+             xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+             xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+             xmlns:local="clr-namespace:MIDIHoldRepairer"
+             StartupUri="MainWindow.xaml"
+    xmlns:System="clr-namespace:System;assembly=System.Runtime">
+    <Application.Resources>
+        <System:String x:Key="AppName">MIDI Hold Repairer</System:String>
+        <System:String x:Key="FileInformationsGroupTitle">File informations</System:String>
+    </Application.Resources>
+</Application>

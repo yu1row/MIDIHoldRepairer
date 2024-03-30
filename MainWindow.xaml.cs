@@ -30,6 +30,7 @@ namespace MIDIHoldRepairer
         public readonly static RoutedCommand RepairAllCommand = new RoutedCommand("RepairAllCommand", typeof(MainWindow));
         public readonly static RoutedCommand RepairSelectedCommand = new RoutedCommand("RepairSelectedCommand", typeof(MainWindow));
 
+
         private readonly MidiEditor _editor;
         public List<HoldEvent> _hold_events;
 
@@ -224,6 +225,12 @@ namespace MIDIHoldRepairer
             }
             UpdateWindow();
         }
+
+        private void CommandBinding_About(object sender, ExecutedRoutedEventArgs e)
+        {
+            (new AboutWindow { Owner = this }).ShowDialog();
+        }
+
         private void CommandBinding_Close(object sender, ExecutedRoutedEventArgs e)
         {
             this.Close();

@@ -12,6 +12,7 @@
         <CommandBinding Command="ApplicationCommands.Close" Executed="CommandBinding_Close"/>
         <CommandBinding Command="ApplicationCommands.Save" Executed="CommandBinding_Save" CanExecute="CanSave"/>
         <CommandBinding Command="ApplicationCommands.SaveAs" Executed="CommandBinding_SaveAs" CanExecute="CanSave"/>
+        <CommandBinding Command="ApplicationCommands.Help" Executed="CommandBinding_About"/>
         <CommandBinding Command="{x:Static local:MainWindow.RepairAllCommand}" Executed="CommandBinding_RepairAll" CanExecute="CanRepairAll" />
         <CommandBinding Command="{x:Static local:MainWindow.RepairSelectedCommand}" Executed="CommandBinding_RepairSelected" CanExecute="CanRepairSelected"/>
     </Window.CommandBindings>
@@ -28,9 +29,12 @@
                 <Separator/>
                 <MenuItem x:Name="MenuItemExit" Header="E_xit" Command="ApplicationCommands.Close" InputGestureText="Alt+F4"/>
             </MenuItem>
-            <MenuItem Header="_Edit" Visibility="Hidden">
+            <MenuItem Header="_Edit" Visibility="Collapsed">
                 <MenuItem x:Name="MenuItemUndo" Header="_Undo" InputGestureText="Ctrl+Z"/>
                 <MenuItem x:Name="MenuItemRedo" Header="_Redo" InputGestureText="Ctrl+Y"/>
+            </MenuItem>
+            <MenuItem Header="_Help">
+                <MenuItem x:Name="MenuItemAbout" Header="_About" Command="ApplicationCommands.Help"/>
             </MenuItem>
         </Menu>
 

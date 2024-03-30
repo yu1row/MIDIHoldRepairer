@@ -1,0 +1,74 @@
+﻿<Window x:Class="MIDIHoldRepairer.AboutWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:MIDIHoldRepairer"
+        mc:Ignorable="d"
+        Title="About" Height="500" Width="600" WindowStartupLocation="CenterOwner" ShowInTaskbar="False" ResizeMode="NoResize">
+    <DockPanel LastChildFill="False">
+        <DockPanel DockPanel.Dock="Top" LastChildFill="True">
+            <Image Height="64" Width="64" DockPanel.Dock="Left" HorizontalAlignment="Left" Source="/app_icon.png" Margin="10,10,10,10"/>
+            <DockPanel DockPanel.Dock="Top" LastChildFill="True" Margin="10,10,10,10">
+                <Label x:Name="AboutAppNameVersion" DockPanel.Dock="Top" />
+                <Label x:Name="AboutCopyright" DockPanel.Dock="Top" />
+            </DockPanel>
+        </DockPanel>
+        <RichTextBox VerticalScrollBarVisibility="Auto" BorderThickness="0,0,0,0" Margin="0,10,10,10">
+            <FlowDocument>
+                <List MarkerStyle="Decimal">
+                    <ListItem>
+                        <Paragraph>
+                            <Run Text="LGPL software"/>
+                        </Paragraph>
+                        <Paragraph>
+                            <LineBreak/>
+                            <Run Text="The program includes software licensed under GNU Lesser General Public License (LGPL)."/>
+                            <LineBreak/>
+                            <Run Text="I disclose the software's source codes so that you may get, copy, distribute and modify it licensed under LGPL."/>
+                        </Paragraph>
+                        <List>
+                            <ListItem>
+                                <Paragraph>
+                                    <Run Text="I cannot answer any question relating to the contents of the source codes."/>
+                                </Paragraph>
+                            </ListItem>
+                            <ListItem>
+                                <Paragraph>
+                                    <Run Text="There is no guarantee or warranty for the disclosed LGPL software in itself, which does not influence the conditions of the warranty or guarantee for the program. That is followed with the terms of warranty attached to this program."/>
+                                </Paragraph>
+                            </ListItem>
+                        </List>
+                        <Paragraph>
+                            <Run Text="[Getting the source codes]"/>
+                            <LineBreak/>
+                            <Run Text="Request the source codes from the following website."/>
+                            <LineBreak/>
+                            <Hyperlink NavigateUri="https://github.com/yu1row/MIDIHoldRepairer" MouseLeftButtonDown="Hyperlink_MouseLeftButtonDown" Cursor="Hand">
+                                <Run Text="https://github.com/yu1row/MIDIHoldRepairer"/>
+                            </Hyperlink>
+                            <LineBreak/>
+                        </Paragraph>
+                    </ListItem>
+
+                    <ListItem>
+                        <Paragraph>
+                            <Run Text="Other third-party library"/>
+                        </Paragraph>
+                        <Paragraph>
+                            <LineBreak/>
+                            <Run Text="The program includes software licensed under the licenses below."/>
+                        </Paragraph>
+                        <List>
+                            <ListItem>
+                                <Paragraph>
+                                    <Run Text="MIDIDataLib8.0"/>
+                                </Paragraph>
+                            </ListItem>
+                        </List>
+                    </ListItem>
+                </List>
+            </FlowDocument>
+        </RichTextBox>
+    </DockPanel>
+</Window>

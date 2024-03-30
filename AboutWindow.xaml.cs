@@ -1,4 +1,7 @@
-﻿/*
+﻿using System.Diagnostics;
+using System.Reflection;
+
+/*
  * Copyright(C) 2024 yu1row
  * This program is free software; you can redistribute it and/or
  * modify it under the terms of the GNU Lesser General Public
@@ -13,15 +16,28 @@
  * You should have received a copy of the GNU Lesser General Public
  * License along with this program; if not, write to the Free Software
  * Foundation, Inc., 59 Temple Place, Suite 330, Boston, MA  02111-1307  USA
- */using System.Windows;
+ */
+using System.Windows;
+using System.Windows.Documents;
 
 namespace MIDIHoldRepairer
 {
     /// <summary>
-    /// Interaction logic for App.xaml
+    /// AboutWindow.xaml の相互作用ロジック
     /// </summary>
-    public partial class App : Application
+    public partial class AboutWindow : Window
     {
-    }
+        public AboutWindow()
+        {
+            InitializeComponent();
+            var ver = FileVersionInfo.GetVersionInfo(Assembly.GetExecutingAssembly().Location);
+            AboutAppNameVersion.Content = $"{ver.ProductName} {ver.ProductVersion}";
+            AboutCopyright.Content = $"Copyright(C) 2024 {ver.LegalCopyright}";
+        }
 
+        private void Hyperlink_MouseLeftButtonDown(object sender, System.Windows.Input.MouseButtonEventArgs e)
+        {
+            Process.Start(new ProcessStartInfo(((Hyperlink)sender).NavigateUri.ToString()) { UseShellExecute = true });
+        }
+    }
 }

@@ -35,7 +35,7 @@ namespace MIDIHoldRepairer
         public int HoldIntervalThreshold
         { get
             {
-                return (MIDIData?.GetTimeResolution() ?? 960) / 64;
+                return (MIDIData?.GetTimeResolution() ?? 960) / 32;
             }
         }
         public string FilePath { get { return _path; } }

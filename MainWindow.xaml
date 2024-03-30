@@ -63,7 +63,7 @@
                     <Button Content="Repair all" Command="{x:Static local:MainWindow.RepairAllCommand}" DockPanel.Dock="Right" Margin="10,0,0,0"/>
                     <Button Content="Repair selected" Command="{x:Static local:MainWindow.RepairSelectedCommand}" DockPanel.Dock="Right"/>
                 </DockPanel>
-                <DataGrid x:Name="DataGridHoldEvents" AutoGenerateColumns="False" IsReadOnly="True" DockPanel.Dock="Top" >
+                <DataGrid x:Name="DataGridHoldEvents" AutoGenerateColumns="False" IsReadOnly="True" DockPanel.Dock="Top" SelectionMode="Single" >
                     <DataGrid.Columns>
                         <DataGridTextColumn Header="Time" IsReadOnly="True" Binding="{Binding Time}">
                             <DataGridTextColumn.CellStyle>

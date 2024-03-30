@@ -31,6 +31,7 @@ namespace MIDIHoldRepairer
         public string OnOff { get; set; }
         public string Text { get; set; }
         public int TimeDiff { get; set; }
+        public string TimeDiffDisp { get { return 0 <= TimeDiff ? TimeDiff.ToString() : ""; } }
         public MIDIEvent Event { get; set; }
         public bool IsOn { get { return (OnOff == "On"); } }
         public bool IsShortDiff { get; set; }

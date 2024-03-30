@@ -90,7 +90,20 @@
                                 </Style>
                             </DataGridTextColumn.CellStyle>
                         </DataGridTextColumn>
-                        <DataGridTextColumn Header="Diff" IsReadOnly="True" Binding="{Binding TimeDiff}"/>
+                        <DataGridTextColumn Header="Diff" IsReadOnly="True" Binding="{Binding TimeDiffDisp}">
+                            <DataGridTextColumn.CellStyle>
+                                <Style TargetType="DataGridCell">
+                                    <Style.Triggers>
+                                        <DataTrigger Binding="{Binding IsShortDiff}" Value="True">
+                                            <Setter Property="Foreground" Value="Red" />
+                                        </DataTrigger>
+                                        <DataTrigger Binding="{Binding IsOn}" Value="True">
+                                            <Setter Property="Content" Value="" />
+                                        </DataTrigger>
+                                    </Style.Triggers>
+                                </Style>
+                            </DataGridTextColumn.CellStyle>
+                        </DataGridTextColumn>
                         <DataGridTextColumn Header="Text" IsReadOnly="True" Binding="{Binding Text}" Width="*"/>
                     </DataGrid.Columns>
                 </DataGrid>

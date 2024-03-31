@@ -1,36 +1,36 @@
-[English](README.md) | “ú–{Œê
+[English](README.md) | æ—¥æœ¬èªž
 
 # MIDI Hold Repairer
 
-‚±‚ÌƒAƒvƒŠƒP[ƒVƒ‡ƒ“‚ÍAMIDIƒtƒ@ƒCƒ‹“à‚Ìƒyƒ_ƒ‹ƒCƒxƒ“ƒg(ƒRƒ“ƒgƒ[ƒ‹ƒ`ƒFƒ“ƒW64”Ô)‚Ì‚¤‚¿A‹·‚·‚¬‚éOn/OffƒCƒxƒ“ƒg‚Ìƒ^ƒCƒ~ƒ“ƒO‚ðC•œ‚µ‚Ü‚·B
+ã“ã®ã‚¢ãƒ—ãƒªã‚±ãƒ¼ã‚·ãƒ§ãƒ³ã¯ã€MIDIãƒ•ã‚¡ã‚¤ãƒ«å†…ã®ãƒšãƒ€ãƒ«ã‚¤ãƒ™ãƒ³ãƒˆ(ã‚³ãƒ³ãƒˆãƒ­ãƒ¼ãƒ«ãƒã‚§ãƒ³ã‚¸64ç•ª)ã®ã†ã¡ã€ç‹­ã™ãŽã‚‹On/Offã‚¤ãƒ™ãƒ³ãƒˆã®ã‚¿ã‚¤ãƒŸãƒ³ã‚°ã‚’ä¿®å¾©ã—ã¾ã™ã€‚
 
-## ŠOŠÏ
+## å¤–è¦³
 
-### ƒƒCƒ“ƒEƒCƒ“ƒhƒE
+### ãƒ¡ã‚¤ãƒ³ã‚¦ã‚¤ãƒ³ãƒ‰ã‚¦
 ![](docs/ScreenShot.png)
-* ã•”˜g
-ˆÈ‰º‚ÌMIDIƒtƒ@ƒCƒ‹î•ñ‚ð•\Ž¦‚µ‚Ü‚·B
-  * Format: SMF(Standard MIDI File)ƒtƒH[ƒ}ƒbƒg(=0,1,2)
-  * Time mode: ƒ^ƒCƒ€ƒx[ƒX(=0:TPQN, 24:SMPTE24, 25:SMPTE25, 29:SMPTE29, 30:SMPTE30)
-    > **_’:_**
-    > ‚±‚ÌƒAƒvƒŠƒP[ƒVƒ‡ƒ“‚ÍTPQNƒ‚[ƒh‚Ì‚Ý‚ðƒTƒ|[ƒg‚µ‚Ü‚·B
-  * Time resolution: ‚S•ª‰¹•„‚ ‚½‚è‚ÌƒeƒBƒbƒN”
-  * Track: ƒtƒ@ƒCƒ‹“à‚Ìƒgƒ‰ƒbƒN”
-* ¶˜g
-ƒtƒ@ƒCƒ‹“à‚Ìƒgƒ‰ƒbƒNƒŠƒXƒg
-* ‰E˜g
-‘I‘ð‚³‚ê‚½ƒgƒ‰ƒbƒN“à‚Ìƒyƒ_ƒ‹ƒCƒxƒ“ƒg(Hold1 = ƒRƒ“ƒgƒ[ƒ‹ƒ`ƒFƒ“ƒW64”Ô)‚ÌƒŠƒXƒg
-  * Time: `¬ß”:””:ƒeƒBƒbƒN”`
-    > **_ƒ^ƒCƒ~ƒ“ƒO‚ª’Z‚·‚¬‚éê‡AÔŽš‚É‚È‚è‚Ü‚·B_**
+* ä¸Šéƒ¨æž 
+ä»¥ä¸‹ã®MIDIãƒ•ã‚¡ã‚¤ãƒ«æƒ…å ±ã‚’è¡¨ç¤ºã—ã¾ã™ã€‚
+  * Format: SMF(Standard MIDI File)ãƒ•ã‚©ãƒ¼ãƒžãƒƒãƒˆ(=0,1,2)
+  * Time mode: ã‚¿ã‚¤ãƒ ãƒ™ãƒ¼ã‚¹(=0:TPQN, 24:SMPTE24, 25:SMPTE25, 29:SMPTE29, 30:SMPTE30)
+    > **_æ³¨:_**
+    > ã“ã®ã‚¢ãƒ—ãƒªã‚±ãƒ¼ã‚·ãƒ§ãƒ³ã¯TPQNãƒ¢ãƒ¼ãƒ‰ã®ã¿ã‚’ã‚µãƒãƒ¼ãƒˆã—ã¾ã™ã€‚
+  * Time resolution: ï¼”åˆ†éŸ³ç¬¦ã‚ãŸã‚Šã®ãƒ†ã‚£ãƒƒã‚¯æ•°
+  * Track: ãƒ•ã‚¡ã‚¤ãƒ«å†…ã®ãƒˆãƒ©ãƒƒã‚¯æ•°
+* å·¦æž 
+ãƒ•ã‚¡ã‚¤ãƒ«å†…ã®ãƒˆãƒ©ãƒƒã‚¯ãƒªã‚¹ãƒˆ
+* å³æž 
+é¸æŠžã•ã‚ŒãŸãƒˆãƒ©ãƒƒã‚¯å†…ã®ãƒšãƒ€ãƒ«ã‚¤ãƒ™ãƒ³ãƒˆ(Hold1 = ã‚³ãƒ³ãƒˆãƒ­ãƒ¼ãƒ«ãƒã‚§ãƒ³ã‚¸64ç•ª)ã®ãƒªã‚¹ãƒˆ
+  * Time: `å°ç¯€æ•°:æ‹æ•°:ãƒ†ã‚£ãƒƒã‚¯æ•°`
+    > **_ã‚¿ã‚¤ãƒŸãƒ³ã‚°ãŒçŸ­ã™ãŽã‚‹å ´åˆã€èµ¤å­—ã«ãªã‚Šã¾ã™ã€‚_**
   * On/Off: Indicates pedal on/off
-  * Diff: ŽŸ‚Ìƒyƒ_ƒ‹ƒIƒtƒCƒxƒ“ƒg‚Ü‚Å‚ÌƒeƒBƒbƒN”
-    > **_ƒeƒBƒbƒN”‚ª­‚È‚·‚¬‚éê‡AÔŽš‚É‚È‚è‚Ü‚·B_**
-  * Repair selected ƒ{ƒ^ƒ“
-    ‘I‘ð‚³‚ê‚½ƒCƒxƒ“ƒg‚Ìƒ^ƒCƒ~ƒ“ƒO‚ðC•œ‚µ‚Ü‚·B
-    > **_C•œ‰Â”\‚ÈƒCƒxƒ“ƒg‚ª‘I‘ð‚³‚ê‚Ä‚¢‚È‚¢ê‡A‚±‚Ìƒ{ƒ^ƒ“‚Í‰Ÿ‚¹‚Ü‚¹‚ñB_**
-  * Repair all ƒ{ƒ^ƒ“
-    ƒŠƒXƒg“à‚Ì‚·‚×‚Ä‚ÌƒCƒxƒ“ƒg‚Ìƒ^ƒCƒ~ƒ“ƒO‚ðC•œ‚µ‚Ü‚·B
-    > **_ƒŠƒXƒg“à‚ÉC•œ‰Â”\‚ÈƒCƒxƒ“ƒg‚ª‚È‚¢ê‡A‚±‚Ìƒ{ƒ^ƒ“‚Í‰Ÿ‚¹‚Ü‚¹‚ñB_**
+  * Diff: æ¬¡ã®ãƒšãƒ€ãƒ«ã‚ªãƒ•ã‚¤ãƒ™ãƒ³ãƒˆã¾ã§ã®ãƒ†ã‚£ãƒƒã‚¯æ•°
+    > **_ãƒ†ã‚£ãƒƒã‚¯æ•°ãŒå°‘ãªã™ãŽã‚‹å ´åˆã€èµ¤å­—ã«ãªã‚Šã¾ã™ã€‚_**
+  * Repair selected ãƒœã‚¿ãƒ³
+    é¸æŠžã•ã‚ŒãŸã‚¤ãƒ™ãƒ³ãƒˆã®ã‚¿ã‚¤ãƒŸãƒ³ã‚°ã‚’ä¿®å¾©ã—ã¾ã™ã€‚
+    > **_ä¿®å¾©å¯èƒ½ãªã‚¤ãƒ™ãƒ³ãƒˆãŒé¸æŠžã•ã‚Œã¦ã„ãªã„å ´åˆã€ã“ã®ãƒœã‚¿ãƒ³ã¯æŠ¼ã›ã¾ã›ã‚“ã€‚_**
+  * Repair all ãƒœã‚¿ãƒ³
+    ãƒªã‚¹ãƒˆå†…ã®ã™ã¹ã¦ã®ã‚¤ãƒ™ãƒ³ãƒˆã®ã‚¿ã‚¤ãƒŸãƒ³ã‚°ã‚’ä¿®å¾©ã—ã¾ã™ã€‚
+    > **_ãƒªã‚¹ãƒˆå†…ã«ä¿®å¾©å¯èƒ½ãªã‚¤ãƒ™ãƒ³ãƒˆãŒãªã„å ´åˆã€ã“ã®ãƒœã‚¿ãƒ³ã¯æŠ¼ã›ã¾ã›ã‚“ã€‚_**
 
-## ƒT[ƒhƒp[ƒeƒB[ƒ‰ƒCƒuƒ‰ƒŠ‚É‚Â‚¢‚Ä
-‚±‚ÌƒAƒvƒŠƒP[ƒVƒ‡ƒ“‚Å‚ÍAu[MIDIDataƒ‰ƒCƒuƒ‰ƒŠ8.0](https://openmidiproject.opal.ne.jp/MIDIDataLibrary.html)v‚ðŽg—p‚µ‚Ü‚·B
+## ã‚µãƒ¼ãƒ‰ãƒ‘ãƒ¼ãƒ†ã‚£ãƒ¼ãƒ©ã‚¤ãƒ–ãƒ©ãƒªã«ã¤ã„ã¦
+ã“ã®ã‚¢ãƒ—ãƒªã‚±ãƒ¼ã‚·ãƒ§ãƒ³ã§ã¯ã€ã€Œ[MIDIDataãƒ©ã‚¤ãƒ–ãƒ©ãƒª8.0](https://openmidiproject.opal.ne.jp/MIDIDataLibrary.html)ã€ã‚’ä½¿ç”¨ã—ã¾ã™ã€‚

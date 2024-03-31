@@ -1,4 +1,4 @@
-English | [“ú–{Œê](README-ja.md)
+English | [æ—¥æœ¬èªž](README-ja.md)
 
 # MIDI Hold Repairer
 

@@ -1,0 +1,71 @@
+name: Release
+
+on:
+  push:
+    tags:
+      - "v*"
+
+permissions:
+  contents: write
+
+jobs:
+  release:
+    runs-on: windows-latest
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v4
+
+      - name: Setup .NET
+        uses: actions/setup-dotnet@v4
+        with:
+          dotnet-version: "6.0.x"
+
+      - name: Setup Node.js
+        uses: actions/setup-node@v4
+        with:
+          node-version: "20"
+
+      - name: Resolve version from tag
+        id: version
+        shell: pwsh
+        run: |
+          $tag = "${{ github.ref_name }}"
+          $raw = $tag.TrimStart("v")
+          $parts = [System.Collections.Generic.List[string]]::new()
+          $parts.AddRange($raw.Split("."))
+          while ($parts.Count -lt 4) { $parts.Add("0") }
+          $assemblyVersion = ($parts[0..3] -join ".")
+          "tag=$tag" | Out-File -FilePath $env:GITHUB_OUTPUT -Append -Encoding utf8
+          "version=$raw" | Out-File -FilePath $env:GITHUB_OUTPUT -Append -Encoding utf8
+          "assembly_version=$assemblyVersion" | Out-File -FilePath $env:GITHUB_OUTPUT -Append -Encoding utf8
+
+      - name: Build PDF manuals
+        shell: pwsh
+        run: ./scripts/build-docs.ps1
+
+      - name: Publish (framework-dependent win-x64)
+        run: >
+          dotnet publish MIDIHoldRepairer.csproj
+          -c Release
+          -r win-x64
+          --self-contained false
+          -o publish/win-x64
+          -p:Version=${{ steps.version.outputs.version }}
+          -p:AssemblyVersion=${{ steps.version.outputs.assembly_version }}
+          -p:FileVersion=${{ steps.version.outputs.assembly_version }}
+          -p:PublishSingleFile=false
+
+      - name: Create zip archive
+        shell: pwsh
+        run: |
+          $zipName = "MIDIHoldRepairer-${{ steps.version.outputs.tag }}-win-x64.zip"
+          Compress-Archive -Path "publish/win-x64/*" -DestinationPath $zipName -Force
+          "zip=$zipName" | Out-File -FilePath $env:GITHUB_OUTPUT -Append -Encoding utf8
+        id: archive
+
+      - name: Create GitHub Release
+        uses: softprops/action-gh-release@v2
+        with:
+          name: MIDI Hold Repairer ${{ steps.version.outputs.tag }}
+          generate_release_notes: true
+          files: ${{ steps.archive.outputs.zip }}

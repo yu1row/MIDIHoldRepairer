@@ -4,6 +4,12 @@ English | [日本語](README-ja.md)
 
 This application repairs too short a tick time between a pedal (Control Change #64) off and next on event in a MIDI file.
 
+## Requirements
+
+* OS: Windows 10/11 **64-bit (x64)**
+* Architecture: **x64 only** (32-bit / x86 is not supported)
+* [.NET Desktop Runtime 6.0 (x64)](https://dotnet.microsoft.com/download/dotnet/6.0)
+
 ## Language
 
 The UI language follows the system language by default (Japanese or English).  

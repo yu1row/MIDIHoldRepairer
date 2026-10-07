@@ -1,0 +1,45 @@
+name: CI
+
+on:
+  pull_request:
+
+jobs:
+  build:
+    runs-on: windows-latest
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v4
+
+      - name: Setup .NET
+        uses: actions/setup-dotnet@v4
+        with:
+          dotnet-version: "6.0.x"
+
+      - name: Restore
+        run: dotnet restore MIDIHoldRepairer.sln
+
+      - name: Build
+        run: dotnet build MIDIHoldRepairer.sln -c Release --no-restore
+
+  docs:
+    runs-on: windows-latest
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v4
+
+      - name: Setup Node.js
+        uses: actions/setup-node@v4
+        with:
+          node-version: "20"
+
+      - name: Build PDF manuals
+        shell: pwsh
+        run: ./scripts/build-docs.ps1
+
+      - name: Upload PDF manuals
+        uses: actions/upload-artifact@v4
+        with:
+          name: manuals
+          path: |
+            docs/README.pdf
+            docs/README-ja.pdf

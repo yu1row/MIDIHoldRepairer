@@ -23,7 +23,13 @@ namespace MIDIHoldRepairer
     {
         public string Language { get; set; } = LanguageManager.PreferenceSystem;
 
+        /// <summary>
+        /// Test hook to redirect settings persistence away from the real app data folder.
+        /// </summary>
+        internal static string? FilePathOverride { get; set; }
+
         private static string FilePath =>
+            FilePathOverride ??
             Path.Combine(
                 Environment.GetFolderPath(Environment.SpecialFolder.LocalApplicationData),
                 "MIDIHoldRepairer",

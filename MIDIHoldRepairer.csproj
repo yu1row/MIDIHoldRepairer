@@ -33,6 +33,13 @@
   </PropertyGroup>
 
   <ItemGroup>
+    <Compile Remove="MIDIHoldRepairer.Tests\**" />
+    <EmbeddedResource Remove="MIDIHoldRepairer.Tests\**" />
+    <None Remove="MIDIHoldRepairer.Tests\**" />
+    <Page Remove="MIDIHoldRepairer.Tests\**" />
+  </ItemGroup>
+
+  <ItemGroup>
     <None Remove="app_icon.png" />
   </ItemGroup>
 
@@ -42,6 +49,10 @@
 
   <ItemGroup>
     <PackageReference Include="Gu.Wpf.Localization" Version="6.7.0" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <InternalsVisibleTo Include="MIDIHoldRepairer.Tests" />
   </ItemGroup>
 
   <ItemGroup>

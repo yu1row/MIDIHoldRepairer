@@ -84,7 +84,7 @@ namespace MIDIHoldRepairer
                 : CultureInfo.GetCultureInfo("en");
         }
 
-        private static string Normalize(string? preference)
+        internal static string Normalize(string? preference)
         {
             return preference switch
             {
@@ -95,3 +95,4 @@ namespace MIDIHoldRepairer
         }
     }
 }
+

@@ -43,6 +43,9 @@ jobs:
         shell: pwsh
         run: ./scripts/build-docs.ps1
 
+      - name: Test
+        run: dotnet test MIDIHoldRepairer.sln -c Release --verbosity normal
+
       - name: Publish (framework-dependent win-x64)
         run: >
           dotnet publish MIDIHoldRepairer.csproj

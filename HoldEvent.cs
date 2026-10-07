@@ -21,6 +21,15 @@ namespace MIDIHoldRepairer
 {
     public class HoldEvent
     {
+        internal HoldEvent()
+        {
+            Time = string.Empty;
+            OnOff = string.Empty;
+            Text = string.Empty;
+            TimeDiff = -1;
+            Event = null!;
+        }
+
         public HoldEvent(MIDIEvent holdEvent) {
             Time = holdEvent.GetTimeString();
             OnOff = holdEvent.CData3 < 64 ? Resources.HoldOff : Resources.HoldOn;

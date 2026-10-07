@@ -22,7 +22,7 @@ namespace MIDIHoldRepairer.Properties {
     [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Resources.Tools.StronglyTypedResourceBuilder", "17.0.0.0")]
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
     [global::System.Runtime.CompilerServices.CompilerGeneratedAttribute()]
-    internal class Resources {
+    public class Resources {
         
         private static global::System.Resources.ResourceManager resourceMan;
         
@@ -36,7 +36,7 @@ namespace MIDIHoldRepairer.Properties {
         ///   このクラスで使用されているキャッシュされた ResourceManager インスタンスを返します。
         /// </summary>
         [global::System.ComponentModel.EditorBrowsableAttribute(global::System.ComponentModel.EditorBrowsableState.Advanced)]
-        internal static global::System.Resources.ResourceManager ResourceManager {
+        public static global::System.Resources.ResourceManager ResourceManager {
             get {
                 if (object.ReferenceEquals(resourceMan, null)) {
                     global::System.Resources.ResourceManager temp = new global::System.Resources.ResourceManager("MIDIHoldRepairer.Properties.Resources", typeof(Resources).Assembly);
@@ -47,11 +47,10 @@ namespace MIDIHoldRepairer.Properties {
         }
         
         /// <summary>
-        ///   すべてについて、現在のスレッドの CurrentUICulture プロパティをオーバーライドします
-        ///   現在のスレッドの CurrentUICulture プロパティをオーバーライドします。
+        ///   すべてについて、現在のスレッドの CurrentUICulture プロパティをオーバーライドします。
         /// </summary>
         [global::System.ComponentModel.EditorBrowsableAttribute(global::System.ComponentModel.EditorBrowsableState.Advanced)]
-        internal static global::System.Globalization.CultureInfo Culture {
+        public static global::System.Globalization.CultureInfo Culture {
             get {
                 return resourceCulture;
             }
@@ -63,11 +62,191 @@ namespace MIDIHoldRepairer.Properties {
         /// <summary>
         ///   型 System.Byte[] のローカライズされたリソースを検索します。
         /// </summary>
-        internal static byte[] app_icon {
+        public static byte[] app_icon {
             get {
                 object obj = ResourceManager.GetObject("app_icon", resourceCulture);
                 return ((byte[])(obj));
             }
+        }
+        
+        public static string AppName {
+            get { return ResourceManager.GetString("AppName", resourceCulture); }
+        }
+        
+        public static string FileInformationsGroupTitle {
+            get { return ResourceManager.GetString("FileInformationsGroupTitle", resourceCulture); }
+        }
+        
+        public static string MenuFile {
+            get { return ResourceManager.GetString("MenuFile", resourceCulture); }
+        }
+        
+        public static string MenuOpen {
+            get { return ResourceManager.GetString("MenuOpen", resourceCulture); }
+        }
+        
+        public static string MenuSave {
+            get { return ResourceManager.GetString("MenuSave", resourceCulture); }
+        }
+        
+        public static string MenuSaveAs {
+            get { return ResourceManager.GetString("MenuSaveAs", resourceCulture); }
+        }
+        
+        public static string MenuExit {
+            get { return ResourceManager.GetString("MenuExit", resourceCulture); }
+        }
+        
+        public static string MenuEdit {
+            get { return ResourceManager.GetString("MenuEdit", resourceCulture); }
+        }
+        
+        public static string MenuUndo {
+            get { return ResourceManager.GetString("MenuUndo", resourceCulture); }
+        }
+        
+        public static string MenuRedo {
+            get { return ResourceManager.GetString("MenuRedo", resourceCulture); }
+        }
+        
+        public static string MenuHelp {
+            get { return ResourceManager.GetString("MenuHelp", resourceCulture); }
+        }
+        
+        public static string MenuAbout {
+            get { return ResourceManager.GetString("MenuAbout", resourceCulture); }
+        }
+        
+        public static string MenuLanguage {
+            get { return ResourceManager.GetString("MenuLanguage", resourceCulture); }
+        }
+        
+        public static string LanguageSystem {
+            get { return ResourceManager.GetString("LanguageSystem", resourceCulture); }
+        }
+        
+        public static string LanguageEnglish {
+            get { return ResourceManager.GetString("LanguageEnglish", resourceCulture); }
+        }
+        
+        public static string LanguageJapanese {
+            get { return ResourceManager.GetString("LanguageJapanese", resourceCulture); }
+        }
+        
+        public static string Tracks {
+            get { return ResourceManager.GetString("Tracks", resourceCulture); }
+        }
+        
+        public static string HoldEvents {
+            get { return ResourceManager.GetString("HoldEvents", resourceCulture); }
+        }
+        
+        public static string RepairAll {
+            get { return ResourceManager.GetString("RepairAll", resourceCulture); }
+        }
+        
+        public static string RepairSelected {
+            get { return ResourceManager.GetString("RepairSelected", resourceCulture); }
+        }
+        
+        public static string ColumnTime {
+            get { return ResourceManager.GetString("ColumnTime", resourceCulture); }
+        }
+        
+        public static string ColumnOnOff {
+            get { return ResourceManager.GetString("ColumnOnOff", resourceCulture); }
+        }
+        
+        public static string ColumnDiff {
+            get { return ResourceManager.GetString("ColumnDiff", resourceCulture); }
+        }
+        
+        public static string ColumnText {
+            get { return ResourceManager.GetString("ColumnText", resourceCulture); }
+        }
+        
+        public static string HoldOn {
+            get { return ResourceManager.GetString("HoldOn", resourceCulture); }
+        }
+        
+        public static string HoldOff {
+            get { return ResourceManager.GetString("HoldOff", resourceCulture); }
+        }
+        
+        public static string MidiFileFilter {
+            get { return ResourceManager.GetString("MidiFileFilter", resourceCulture); }
+        }
+        
+        public static string FailedToLoad {
+            get { return ResourceManager.GetString("FailedToLoad", resourceCulture); }
+        }
+        
+        public static string FailedToSave {
+            get { return ResourceManager.GetString("FailedToSave", resourceCulture); }
+        }
+        
+        public static string Error {
+            get { return ResourceManager.GetString("Error", resourceCulture); }
+        }
+        
+        public static string InfoFormat {
+            get { return ResourceManager.GetString("InfoFormat", resourceCulture); }
+        }
+        
+        public static string InfoTimeMode {
+            get { return ResourceManager.GetString("InfoTimeMode", resourceCulture); }
+        }
+        
+        public static string InfoTimeResolution {
+            get { return ResourceManager.GetString("InfoTimeResolution", resourceCulture); }
+        }
+        
+        public static string InfoTrack {
+            get { return ResourceManager.GetString("InfoTrack", resourceCulture); }
+        }
+        
+        public static string MidiInformationsFormat {
+            get { return ResourceManager.GetString("MidiInformationsFormat", resourceCulture); }
+        }
+        
+        public static string AboutTitle {
+            get { return ResourceManager.GetString("AboutTitle", resourceCulture); }
+        }
+        
+        public static string AboutLgplSoftware {
+            get { return ResourceManager.GetString("AboutLgplSoftware", resourceCulture); }
+        }
+        
+        public static string AboutLgplDesc1 {
+            get { return ResourceManager.GetString("AboutLgplDesc1", resourceCulture); }
+        }
+        
+        public static string AboutLgplDesc2 {
+            get { return ResourceManager.GetString("AboutLgplDesc2", resourceCulture); }
+        }
+        
+        public static string AboutLgplNote1 {
+            get { return ResourceManager.GetString("AboutLgplNote1", resourceCulture); }
+        }
+        
+        public static string AboutLgplNote2 {
+            get { return ResourceManager.GetString("AboutLgplNote2", resourceCulture); }
+        }
+        
+        public static string AboutGettingSource {
+            get { return ResourceManager.GetString("AboutGettingSource", resourceCulture); }
+        }
+        
+        public static string AboutRequestSource {
+            get { return ResourceManager.GetString("AboutRequestSource", resourceCulture); }
+        }
+        
+        public static string AboutOtherLibrary {
+            get { return ResourceManager.GetString("AboutOtherLibrary", resourceCulture); }
+        }
+        
+        public static string AboutOtherLibraryDesc {
+            get { return ResourceManager.GetString("AboutOtherLibraryDesc", resourceCulture); }
         }
     }
 }

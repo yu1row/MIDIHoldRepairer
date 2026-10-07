@@ -14,6 +14,7 @@
  * License along with this program; if not, write to the Free Software
  * Foundation, Inc., 59 Temple Place, Suite 330, Boston, MA  02111-1307  USA
  */
+using MIDIHoldRepairer.Properties;
 using MIDIHoldRepairer.Structures;
 
 namespace MIDIHoldRepairer
@@ -22,7 +23,7 @@ namespace MIDIHoldRepairer
     {
         public HoldEvent(MIDIEvent holdEvent) {
             Time = holdEvent.GetTimeString();
-            OnOff = holdEvent.CData3 < 64 ? "Off" : "On";
+            OnOff = holdEvent.CData3 < 64 ? Resources.HoldOff : Resources.HoldOn;
             Text = holdEvent.GetString();
             TimeDiff = -1;
             Event = holdEvent;
@@ -33,7 +34,7 @@ namespace MIDIHoldRepairer
         public int TimeDiff { get; set; }
         public string TimeDiffDisp { get { return 0 <= TimeDiff ? TimeDiff.ToString() : ""; } }
         public MIDIEvent Event { get; set; }
-        public bool IsOn { get { return (OnOff == "On"); } }
+        public bool IsOn { get { return Event.CData3 >= 64; } }
         public bool IsShortDiff { get; set; }
     }
 }

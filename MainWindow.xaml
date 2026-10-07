@@ -4,9 +4,10 @@
         xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:l="clr-namespace:Gu.Wpf.Localization;assembly=Gu.Wpf.Localization"
+        xmlns:p="clr-namespace:MIDIHoldRepairer.Properties"
         xmlns:local="clr-namespace:MIDIHoldRepairer"
         mc:Ignorable="d"
-        Title="MIDI Hold Repairer" Height="600" Width="800" Closed="Window_Closed">
+        Title="{l:Static p:Resources.AppName}" Height="600" Width="800" Closed="Window_Closed">
     <Window.CommandBindings>
         <CommandBinding Command="ApplicationCommands.Open" Executed="CommandBinding_Open"/>
         <CommandBinding Command="ApplicationCommands.Close" Executed="CommandBinding_Close"/>
@@ -22,19 +23,24 @@
     <DockPanel LastChildFill="True">
 
         <Menu DockPanel.Dock="Top" Height="20">
-            <MenuItem Header="_File">
-                <MenuItem x:Name="MenuItemOpen" Header="_Open..." Command="ApplicationCommands.Open" InputGestureText="Ctrl+O"/>
-                <MenuItem x:Name="MenuItemSave" Header="_Save" Command="ApplicationCommands.Save" InputGestureText="Ctrl+S"/>
-                <MenuItem x:Name="MenuItemSaveAs" Header="Save _As..." Command="ApplicationCommands.SaveAs"/>
+            <MenuItem Header="{l:Static p:Resources.MenuFile}">
+                <MenuItem x:Name="MenuItemOpen" Header="{l:Static p:Resources.MenuOpen}" Command="ApplicationCommands.Open" InputGestureText="Ctrl+O"/>
+                <MenuItem x:Name="MenuItemSave" Header="{l:Static p:Resources.MenuSave}" Command="ApplicationCommands.Save" InputGestureText="Ctrl+S"/>
+                <MenuItem x:Name="MenuItemSaveAs" Header="{l:Static p:Resources.MenuSaveAs}" Command="ApplicationCommands.SaveAs"/>
                 <Separator/>
-                <MenuItem x:Name="MenuItemExit" Header="E_xit" Command="ApplicationCommands.Close" InputGestureText="Alt+F4"/>
+                <MenuItem x:Name="MenuItemExit" Header="{l:Static p:Resources.MenuExit}" Command="ApplicationCommands.Close" InputGestureText="Alt+F4"/>
             </MenuItem>
-            <MenuItem Header="_Edit" Visibility="Collapsed">
-                <MenuItem x:Name="MenuItemUndo" Header="_Undo" InputGestureText="Ctrl+Z"/>
-                <MenuItem x:Name="MenuItemRedo" Header="_Redo" InputGestureText="Ctrl+Y"/>
+            <MenuItem Header="{l:Static p:Resources.MenuEdit}" Visibility="Collapsed">
+                <MenuItem x:Name="MenuItemUndo" Header="{l:Static p:Resources.MenuUndo}" InputGestureText="Ctrl+Z"/>
+                <MenuItem x:Name="MenuItemRedo" Header="{l:Static p:Resources.MenuRedo}" InputGestureText="Ctrl+Y"/>
             </MenuItem>
-            <MenuItem Header="_Help">
-                <MenuItem x:Name="MenuItemAbout" Header="_About" Command="ApplicationCommands.Help"/>
+            <MenuItem Header="{l:Static p:Resources.MenuLanguage}">
+                <MenuItem x:Name="MenuLangSystem" Header="{l:Static p:Resources.LanguageSystem}" IsCheckable="True" StaysOpenOnClick="True" Click="MenuLanguage_Click" Tag="System"/>
+                <MenuItem x:Name="MenuLangEnglish" Header="{l:Static p:Resources.LanguageEnglish}" IsCheckable="True" StaysOpenOnClick="True" Click="MenuLanguage_Click" Tag="en"/>
+                <MenuItem x:Name="MenuLangJapanese" Header="{l:Static p:Resources.LanguageJapanese}" IsCheckable="True" StaysOpenOnClick="True" Click="MenuLanguage_Click" Tag="ja"/>
+            </MenuItem>
+            <MenuItem Header="{l:Static p:Resources.MenuHelp}">
+                <MenuItem x:Name="MenuItemAbout" Header="{l:Static p:Resources.MenuAbout}" Command="ApplicationCommands.Help"/>
             </MenuItem>
         </Menu>
 
@@ -47,25 +53,25 @@
                 <ColumnDefinition Width="3*"/>
                 <ColumnDefinition Width="9*"/>
             </Grid.ColumnDefinitions>
-            <GroupBox Header="{DynamicResource FileInformationsGroupTitle}" Grid.ColumnSpan="2">
+            <GroupBox Header="{l:Static p:Resources.FileInformationsGroupTitle}" Grid.ColumnSpan="2">
                 <DockPanel LastChildFill="True">
                     <Label x:Name="label_filepath" Margin="10,10,0,0" DockPanel.Dock="Top"/>
                     <Label x:Name="label_fileinfo" Margin="15,0,0,0" DockPanel.Dock="Bottom"/>
                 </DockPanel>
             </GroupBox>
             <DockPanel Grid.Row="1" LastChildFill="True">
-                <Label Content="Tracks" DockPanel.Dock="Top"/>
+                <Label Content="{l:Static p:Resources.Tracks}" DockPanel.Dock="Top"/>
                 <ListBox x:Name="ListTracks" DockPanel.Dock="Bottom" SelectionChanged="ListTracks_SelectionChanged" />
             </DockPanel>
             <DockPanel Grid.Row="1" Grid.Column="1" LastChildFill="True" Margin="10,0,0,0">
-                <Label Content="Hold(CC: 64) events" DockPanel.Dock="Top"/>
+                <Label Content="{l:Static p:Resources.HoldEvents}" DockPanel.Dock="Top"/>
                 <DockPanel Grid.Row="1" DockPanel.Dock="Bottom" LastChildFill="False" Margin="0,10,0,0">
-                    <Button Content="Repair all" Command="{x:Static local:MainWindow.RepairAllCommand}" DockPanel.Dock="Right" Margin="10,0,0,0"/>
-                    <Button Content="Repair selected" Command="{x:Static local:MainWindow.RepairSelectedCommand}" DockPanel.Dock="Right"/>
+                    <Button Content="{l:Static p:Resources.RepairAll}" Command="{x:Static local:MainWindow.RepairAllCommand}" DockPanel.Dock="Right" Margin="10,0,0,0"/>
+                    <Button Content="{l:Static p:Resources.RepairSelected}" Command="{x:Static local:MainWindow.RepairSelectedCommand}" DockPanel.Dock="Right"/>
                 </DockPanel>
                 <DataGrid x:Name="DataGridHoldEvents" AutoGenerateColumns="False" IsReadOnly="True" DockPanel.Dock="Top" SelectionMode="Single" >
                     <DataGrid.Columns>
-                        <DataGridTextColumn Header="Time" IsReadOnly="True" Binding="{Binding Time}">
+                        <DataGridTextColumn Header="{l:Static p:Resources.ColumnTime}" IsReadOnly="True" Binding="{Binding Time}">
                             <DataGridTextColumn.CellStyle>
                                 <Style TargetType="DataGridCell">
                                     <Style.Triggers>
@@ -76,7 +82,7 @@
                                 </Style>
                             </DataGridTextColumn.CellStyle>
                         </DataGridTextColumn>
-                        <DataGridTextColumn Header="On/Off" IsReadOnly="True" Binding="{Binding OnOff}">
+                        <DataGridTextColumn Header="{l:Static p:Resources.ColumnOnOff}" IsReadOnly="True" Binding="{Binding OnOff}">
                             <DataGridTextColumn.CellStyle>
                                 <Style TargetType="DataGridCell">
                                     <Style.Triggers>
@@ -90,7 +96,7 @@
                                 </Style>
                             </DataGridTextColumn.CellStyle>
                         </DataGridTextColumn>
-                        <DataGridTextColumn Header="Diff" IsReadOnly="True" Binding="{Binding TimeDiffDisp}">
+                        <DataGridTextColumn Header="{l:Static p:Resources.ColumnDiff}" IsReadOnly="True" Binding="{Binding TimeDiffDisp}">
                             <DataGridTextColumn.CellStyle>
                                 <Style TargetType="DataGridCell">
                                     <Style.Triggers>
@@ -104,7 +110,7 @@
                                 </Style>
                             </DataGridTextColumn.CellStyle>
                         </DataGridTextColumn>
-                        <DataGridTextColumn Header="Text" IsReadOnly="True" Binding="{Binding Text}" Width="*"/>
+                        <DataGridTextColumn Header="{l:Static p:Resources.ColumnText}" IsReadOnly="True" Binding="{Binding Text}" Width="*"/>
                     </DataGrid.Columns>
                 </DataGrid>
             </DockPanel>

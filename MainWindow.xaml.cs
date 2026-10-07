@@ -19,6 +19,7 @@ using MIDIHoldRepairer.Structures;
 using System.Windows;
 using System.Windows.Controls;
 using System.Windows.Input;
+using Resx = MIDIHoldRepairer.Properties.Resources;
 
 namespace MIDIHoldRepairer
 {
@@ -40,6 +41,31 @@ namespace MIDIHoldRepairer
             _editor = new MidiEditor();
             _hold_events = new List<HoldEvent>();
             DataGridHoldEvents.ItemsSource = _hold_events;
+            UpdateLanguageMenuChecks();
+            LanguageManager.CultureChanged += LanguageManager_CultureChanged;
+        }
+
+        private void LanguageManager_CultureChanged(object? sender, EventArgs e)
+        {
+            UpdateLanguageMenuChecks();
+            UpdateWindow();
+            UpdateEventTable();
+        }
+
+        private void UpdateLanguageMenuChecks()
+        {
+            MenuLangSystem.IsChecked = LanguageManager.Preference == LanguageManager.PreferenceSystem;
+            MenuLangEnglish.IsChecked = LanguageManager.Preference == LanguageManager.PreferenceEnglish;
+            MenuLangJapanese.IsChecked = LanguageManager.Preference == LanguageManager.PreferenceJapanese;
+        }
+
+        private void MenuLanguage_Click(object sender, RoutedEventArgs e)
+        {
+            if (sender is MenuItem item && item.Tag is string preference)
+            {
+                LanguageManager.SetPreference(preference);
+                UpdateLanguageMenuChecks();
+            }
         }
 
         private IntPtr? GetCurrentEventPointer()
@@ -98,9 +124,10 @@ namespace MIDIHoldRepairer
         private void UpdateWindow()
         {
             var fileName = _editor.IsLoaded ? $" - {_editor.FileName}" : string.Empty;
-            this.Title = $"{App.Current.Resources["AppName"]}{fileName}";
+            this.Title = $"{Resx.AppName}{fileName}";
             label_filepath.Content = _editor.IsLoaded ? _editor.FilePath : string.Empty;
-            label_fileinfo.Content = _editor.IsLoaded ? $" - {_editor.MIDIInformationsText}" : string.Empty;        }
+            label_fileinfo.Content = _editor.IsLoaded ? $" - {_editor.MIDIInformationsText}" : string.Empty;
+        }
 
         private void UpdateTrackList()
         {
@@ -121,18 +148,19 @@ namespace MIDIHoldRepairer
 
         private void Window_Closed(object sender, EventArgs e)
         {
+            LanguageManager.CultureChanged -= LanguageManager_CultureChanged;
             _editor.UnLoad();
         }
 
         private void CommandBinding_Open(object sender, ExecutedRoutedEventArgs e)
         {
             var dialog = new OpenFileDialog();
-            dialog.Filter = "MIDI File (*.mid)|*.mid|All file (*.*)|*.*";
+            dialog.Filter = Resx.MidiFileFilter;
             if (dialog.ShowDialog() == true)
             {
                 if (!_editor.Load(dialog.FileName))
                 {
-                    MessageBox.Show(this, "Failed to load.", "Error");
+                    MessageBox.Show(this, Resx.FailedToLoad, Resx.Error);
                 }
                 UpdateWindow();
                 UpdateTrackList();
@@ -173,7 +201,7 @@ namespace MIDIHoldRepairer
             {
                 if (!_editor.Save())
                 {
-                    MessageBox.Show(this, "Failed to save.", "Error");
+                    MessageBox.Show(this, Resx.FailedToSave, Resx.Error);
                 }
             }
         }
@@ -214,12 +242,12 @@ namespace MIDIHoldRepairer
             if (_editor.IsLoaded)
             {
                 var dialog = new SaveFileDialog();
-                dialog.Filter = "MIDI File (*.mid)|*.mid|All file (*.*)|*.*";
+                dialog.Filter = Resx.MidiFileFilter;
                 if (dialog.ShowDialog() == true)
                 {
                     if (!_editor.Save(dialog.FileName))
                     {
-                        MessageBox.Show(this, "Failed to save.", "Error");
+                        MessageBox.Show(this, Resx.FailedToSave, Resx.Error);
                     }
                 }
             }

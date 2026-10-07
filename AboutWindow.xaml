@@ -3,9 +3,11 @@
         xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
         xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:l="clr-namespace:Gu.Wpf.Localization;assembly=Gu.Wpf.Localization"
+        xmlns:p="clr-namespace:MIDIHoldRepairer.Properties"
         xmlns:local="clr-namespace:MIDIHoldRepairer"
         mc:Ignorable="d"
-        Title="About" Height="500" Width="600" WindowStartupLocation="CenterOwner" ShowInTaskbar="False" ResizeMode="NoResize">
+        Title="{l:Static p:Resources.AboutTitle}" Height="500" Width="600" WindowStartupLocation="CenterOwner" ShowInTaskbar="False" ResizeMode="NoResize">
     <DockPanel LastChildFill="False">
         <DockPanel DockPanel.Dock="Top" LastChildFill="True">
             <Image Height="64" Width="64" DockPanel.Dock="Left" HorizontalAlignment="Left" Source="/app_icon.png" Margin="10,10,10,10"/>
@@ -19,30 +21,30 @@
                 <List MarkerStyle="Decimal">
                     <ListItem>
                         <Paragraph>
-                            <Run Text="LGPL software"/>
+                            <Run Text="{l:Static p:Resources.AboutLgplSoftware}"/>
                         </Paragraph>
                         <Paragraph>
                             <LineBreak/>
-                            <Run Text="The program includes software licensed under GNU Lesser General Public License (LGPL)."/>
+                            <Run Text="{l:Static p:Resources.AboutLgplDesc1}"/>
                             <LineBreak/>
-                            <Run Text="I disclose the software's source codes so that you may get, copy, distribute and modify it licensed under LGPL."/>
+                            <Run Text="{l:Static p:Resources.AboutLgplDesc2}"/>
                         </Paragraph>
                         <List>
                             <ListItem>
                                 <Paragraph>
-                                    <Run Text="I cannot answer any question relating to the contents of the source codes."/>
+                                    <Run Text="{l:Static p:Resources.AboutLgplNote1}"/>
                                 </Paragraph>
                             </ListItem>
                             <ListItem>
                                 <Paragraph>
-                                    <Run Text="There is no guarantee or warranty for the disclosed LGPL software in itself, which does not influence the conditions of the warranty or guarantee for the program. That is followed with the terms of warranty attached to this program."/>
+                                    <Run Text="{l:Static p:Resources.AboutLgplNote2}"/>
                                 </Paragraph>
                             </ListItem>
                         </List>
                         <Paragraph>
-                            <Run Text="[Getting the source codes]"/>
+                            <Run Text="{l:Static p:Resources.AboutGettingSource}"/>
                             <LineBreak/>
-                            <Run Text="Request the source codes from the following website."/>
+                            <Run Text="{l:Static p:Resources.AboutRequestSource}"/>
                             <LineBreak/>
                             <Hyperlink NavigateUri="https://github.com/yu1row/MIDIHoldRepairer" MouseLeftButtonDown="Hyperlink_MouseLeftButtonDown" Cursor="Hand">
                                 <Run Text="https://github.com/yu1row/MIDIHoldRepairer"/>
@@ -53,11 +55,11 @@
 
                     <ListItem>
                         <Paragraph>
-                            <Run Text="Other third-party library"/>
+                            <Run Text="{l:Static p:Resources.AboutOtherLibrary}"/>
                         </Paragraph>
                         <Paragraph>
                             <LineBreak/>
-                            <Run Text="The program includes software licensed under the licenses below."/>
+                            <Run Text="{l:Static p:Resources.AboutOtherLibraryDesc}"/>
                         </Paragraph>
                         <List>
                             <ListItem>

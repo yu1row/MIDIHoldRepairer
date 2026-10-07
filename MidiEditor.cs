@@ -14,6 +14,7 @@
  * License along with this program; if not, write to the Free Software
  * Foundation, Inc., 59 Temple Place, Suite 330, Boston, MA  02111-1307  USA
  */
+using MIDIHoldRepairer.Properties;
 using MIDIHoldRepairer.Structures;
 using System.IO;
 
@@ -47,11 +48,20 @@ namespace MIDIHoldRepairer
             {
                 if (MIDIData != null)
                 {
-                    return $"Format = {MIDIData.Data.Format}, Time mode = {MIDIData.GetTimeMode()}, Time resolution = {MIDIData.GetTimeResolution()}, Track = {MIDIData.Data.NumTrack}";
+                    return string.Format(
+                        Resources.MidiInformationsFormat,
+                        Resources.InfoFormat,
+                        MIDIData.Data.Format,
+                        Resources.InfoTimeMode,
+                        MIDIData.GetTimeMode(),
+                        Resources.InfoTimeResolution,
+                        MIDIData.GetTimeResolution(),
+                        Resources.InfoTrack,
+                        MIDIData.Data.NumTrack);
                 }
                 else
                 {
-                    return "Failed to load.";
+                    return Resources.FailedToLoad;
                 }
             }
         }

@@ -1,4 +1,4 @@
-﻿<?xml version="1.0" encoding="utf-8"?>
+<?xml version="1.0" encoding="utf-8"?>
 <root>
   <xsd:schema id="root" xmlns="" xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:msdata="urn:schemas-microsoft-com:xml-msdata">
     <xsd:import namespace="http://www.w3.org/XML/1998/namespace" />
@@ -58,51 +58,47 @@
   <resheader name="writer">
     <value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </resheader>
-  <assembly alias="System.Windows.Forms" name="System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" />
-  <data name="app_icon" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\app_icon.ico;System.Byte[], mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
-  </data>
   <data name="AppName" xml:space="preserve">
     <value>MIDI Hold Repairer</value>
   </data>
   <data name="FileInformationsGroupTitle" xml:space="preserve">
-    <value>File informations</value>
+    <value>ファイル情報</value>
   </data>
   <data name="MenuFile" xml:space="preserve">
-    <value>_File</value>
+    <value>ファイル(_F)</value>
   </data>
   <data name="MenuOpen" xml:space="preserve">
-    <value>_Open...</value>
+    <value>開く(_O)...</value>
   </data>
   <data name="MenuSave" xml:space="preserve">
-    <value>_Save</value>
+    <value>上書き保存(_S)</value>
   </data>
   <data name="MenuSaveAs" xml:space="preserve">
-    <value>Save _As...</value>
+    <value>名前を付けて保存(_A)...</value>
   </data>
   <data name="MenuExit" xml:space="preserve">
-    <value>E_xit</value>
+    <value>終了(_X)</value>
   </data>
   <data name="MenuEdit" xml:space="preserve">
-    <value>_Edit</value>
+    <value>編集(_E)</value>
   </data>
   <data name="MenuUndo" xml:space="preserve">
-    <value>_Undo</value>
+    <value>元に戻す(_U)</value>
   </data>
   <data name="MenuRedo" xml:space="preserve">
-    <value>_Redo</value>
+    <value>やり直し(_R)</value>
   </data>
   <data name="MenuHelp" xml:space="preserve">
-    <value>_Help</value>
+    <value>ヘルプ(_H)</value>
   </data>
   <data name="MenuAbout" xml:space="preserve">
-    <value>_About</value>
+    <value>バージョン情報(_A)</value>
   </data>
   <data name="MenuLanguage" xml:space="preserve">
-    <value>_Language</value>
+    <value>言語(_L)</value>
   </data>
   <data name="LanguageSystem" xml:space="preserve">
-    <value>System</value>
+    <value>システム</value>
   </data>
   <data name="LanguageEnglish" xml:space="preserve">
     <value>English</value>
@@ -111,28 +107,28 @@
     <value>日本語</value>
   </data>
   <data name="Tracks" xml:space="preserve">
-    <value>Tracks</value>
+    <value>トラック</value>
   </data>
   <data name="HoldEvents" xml:space="preserve">
-    <value>Hold(CC: 64) events</value>
+    <value>ホールド(CC: 64) イベント</value>
   </data>
   <data name="RepairAll" xml:space="preserve">
-    <value>Repair all</value>
+    <value>すべて修復</value>
   </data>
   <data name="RepairSelected" xml:space="preserve">
-    <value>Repair selected</value>
+    <value>選択を修復</value>
   </data>
   <data name="ColumnTime" xml:space="preserve">
-    <value>Time</value>
+    <value>タイム</value>
   </data>
   <data name="ColumnOnOff" xml:space="preserve">
     <value>On/Off</value>
   </data>
   <data name="ColumnDiff" xml:space="preserve">
-    <value>Diff</value>
+    <value>差分</value>
   </data>
   <data name="ColumnText" xml:space="preserve">
-    <value>Text</value>
+    <value>テキスト</value>
   </data>
   <data name="HoldOn" xml:space="preserve">
     <value>On</value>
@@ -141,60 +137,60 @@
     <value>Off</value>
   </data>
   <data name="MidiFileFilter" xml:space="preserve">
-    <value>MIDI File (*.mid)|*.mid|All file (*.*)|*.*</value>
+    <value>MIDI ファイル (*.mid)|*.mid|すべてのファイル (*.*)|*.*</value>
   </data>
   <data name="FailedToLoad" xml:space="preserve">
-    <value>Failed to load.</value>
+    <value>読み込みに失敗しました。</value>
   </data>
   <data name="FailedToSave" xml:space="preserve">
-    <value>Failed to save.</value>
+    <value>保存に失敗しました。</value>
   </data>
   <data name="Error" xml:space="preserve">
-    <value>Error</value>
+    <value>エラー</value>
   </data>
   <data name="InfoFormat" xml:space="preserve">
-    <value>Format</value>
+    <value>フォーマット</value>
   </data>
   <data name="InfoTimeMode" xml:space="preserve">
-    <value>Time mode</value>
+    <value>モード</value>
   </data>
   <data name="InfoTimeResolution" xml:space="preserve">
-    <value>Time resolution</value>
+    <value>分解能</value>
   </data>
   <data name="InfoTrack" xml:space="preserve">
-    <value>Track</value>
+    <value>トラック</value>
   </data>
   <data name="MidiInformationsFormat" xml:space="preserve">
     <value>{0} = {1}, {2} = {3}, {4} = {5}, {6} = {7}</value>
   </data>
   <data name="AboutTitle" xml:space="preserve">
-    <value>About</value>
+    <value>バージョン情報</value>
   </data>
   <data name="AboutLgplSoftware" xml:space="preserve">
-    <value>LGPL software</value>
+    <value>LGPL ソフトウェア</value>
   </data>
   <data name="AboutLgplDesc1" xml:space="preserve">
-    <value>The program includes software licensed under GNU Lesser General Public License (LGPL).</value>
+    <value>本プログラムには、GNU Lesser General Public License (LGPL) の下でライセンスされたソフトウェアが含まれています。</value>
   </data>
   <data name="AboutLgplDesc2" xml:space="preserve">
-    <value>I disclose the software's source codes so that you may get, copy, distribute and modify it licensed under LGPL.</value>
+    <value>LGPL の下で取得・複製・配布・改変できるよう、該当ソフトウェアのソースコードを開示しています。</value>
   </data>
   <data name="AboutLgplNote1" xml:space="preserve">
-    <value>I cannot answer any question relating to the contents of the source codes.</value>
+    <value>ソースコードの内容に関するお問い合わせにはお答えできません。</value>
   </data>
   <data name="AboutLgplNote2" xml:space="preserve">
-    <value>There is no guarantee or warranty for the disclosed LGPL software in itself, which does not influence the conditions of the warranty or guarantee for the program. That is followed with the terms of warranty attached to this program.</value>
+    <value>開示された LGPL ソフトウェア自体に保証はありません。これは本プログラムの保証条件に影響しません。本プログラムの保証は、添付の保証条件に従います。</value>
   </data>
   <data name="AboutGettingSource" xml:space="preserve">
-    <value>[Getting the source codes]</value>
+    <value>【ソースコードの入手】</value>
   </data>
   <data name="AboutRequestSource" xml:space="preserve">
-    <value>Request the source codes from the following website.</value>
+    <value>以下のウェブサイトからソースコードを入手できます。</value>
   </data>
   <data name="AboutOtherLibrary" xml:space="preserve">
-    <value>Other third-party library</value>
+    <value>その他のサードパーティーライブラリ</value>
   </data>
   <data name="AboutOtherLibraryDesc" xml:space="preserve">
-    <value>The program includes software licensed under the licenses below.</value>
+    <value>本プログラムには、以下のライセンスの下で提供されるソフトウェアが含まれています。</value>
   </data>
 </root>

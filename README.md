@@ -2,7 +2,18 @@ English | [日本語](README-ja.md)
 
 # MIDI Hold Repairer
 
-This application repairs too short a tick time between a pedal (Control Chante #64) off and next on event in a MIDI file.
+This application repairs too short a tick time between a pedal (Control Change #64) off and next on event in a MIDI file.
+
+## Language
+
+The UI language follows the system language by default (Japanese or English).  
+You can switch it manually from the **Language** menu:
+
+* **System** — follow the OS UI language (default)
+* **English**
+* **日本語**
+
+The selection is saved and restored on the next launch.
 
 ## Appearance
 
@@ -19,7 +30,7 @@ MIDI file information below.
 * Left pane
 Track list within file
 * Right pane
-List of padal events(Hold1 = Control Change #64) in the selected track
+List of pedal events(Hold1 = Control Change #64) in the selected track
   * Time: `Measures:Beats:Ticks`
     > **_If the timing is too short, it will be in the red._**
   * On/Off: Indicates pedal on/off
